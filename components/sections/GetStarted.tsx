@@ -27,15 +27,15 @@ const fadeUp = (delay = 0) => ({
 /* ─────────────────────────── component ──────────────────────── */
 export default function GetStarted() {
   return (
-    <section className="relative py-15 md:py-24 px-6 lg:px-16 overflow-hidden">
+    <section className="relative py-15 xl:py-20 px-6 lg:px-16 overflow-hidden">
       {/* ── Ambient glow behind the card ── */}
-      <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
+      <div className="hidden lg:block pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
         <div className="w-[700px] h-[420px] rounded-full bg-blue-500/10 blur-[130px]" />
       </div>
-      <div className="pointer-events-none absolute bottom-50 left-1/4 -z-10 w-[400px] h-[250px] rounded-full bg-violet-400/10 blur-[100px]" />
+      <div className="hidden lg:block pointer-events-none absolute bottom-50 left-1/4 -z-10 w-[400px] h-[250px] rounded-full bg-violet-400/10 blur-[100px]" />
 
       {/* ── Card wrapper (animation) ── */}
-      <div className="max-w-4xl mx-auto">
+      <div className="lg:max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 48, scale: 0.96 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -90,7 +90,7 @@ export default function GetStarted() {
                 {/* ── Subtitle ── */}
                 <motion.p
                   {...fadeUp(0.26)}
-                  className="text-neutral-500 dark:text-neutral-400 text-base sm:text-lg max-w-lg mx-auto mb-10 leading-relaxed"
+                  className="text-neutral-500 dark:text-neutral-400 text-base sm:text-lg md:max-w-lg mx-auto mb-10 leading-relaxed"
                 >
                   Join thousands of companies using Growifyhrm to automate HR
                   tasks and empower their teams.

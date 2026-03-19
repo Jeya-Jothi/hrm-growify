@@ -22,7 +22,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative mt-24 border-t border-gray-200 dark:border-white/10 overflow-hidden">
+    <footer className="relative mt-10 lg:mt-15 xl:mt-24 border-t border-gray-200 dark:border-white/10 overflow-hidden">
       {/* Gradient Half Circle Glow */}
       <div className="absolute inset-0 -z-10 flex justify-center">
         <div className="w-full h-full lg:h-[50%] bg-linear-to-b from-blue-500/30 to-transparent blur-3xl rounded-full top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute" />
@@ -33,17 +33,12 @@ export default function Footer() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="max-w-6xl mx-auto px-6 py-16"
+        className="lg:max-w-6xl mx-auto px-6 py-16"
       >
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-sm font-bold"></div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Growify<span className="text-blue-500">HRM</span>
-              </h3>
-            </div>
+            <img src="/hrm full logo.svg" alt="HRM logo" className="w-35" />
 
             <p className="mt-4 text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
               The intelligence layer for modern HR teams. Automate operations,

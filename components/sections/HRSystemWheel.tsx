@@ -86,7 +86,7 @@ export default function HRSystemWheel() {
     <section
       ref={sectionRef}
       id="features"
-      className="relative scroll-mt-20 py-10 md:py-24 px-6 flex flex-col items-center"
+      className="relative scroll-mt-20 py-10 2xl:py-15 px-6 flex flex-col items-center"
       aria-labelledby="hr-wheel-heading"
     >
       {/* ── Section header ─────────────────────────────────────────────────── */}
@@ -94,7 +94,7 @@ export default function HRSystemWheel() {
         initial={{ opacity: 0, y: 28 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mb-16 lg:mb-20"
+        className="text-center md:max-w-2xl mb-8 md:mb-16"
       >
         <span className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-blue-500/10 text-blue-500 border border-blue-500/20">
           Platform Overview
@@ -116,7 +116,7 @@ export default function HRSystemWheel() {
       {/* overflow:visible lets node cards render outside the measured square   */}
       <div
         ref={containerRef}
-        className="relative w-87.5 sm:w-130 lg:w-200 xl:w-230 2xl:w-250 aspect-square"
+        className="relative  w-full sm:w-130 lg:w-200 xl:w-230 2xl:w-250 aspect-square mx-auto"
         style={{ overflow: "visible" }}
       >
         {containerSize > 0 && (
@@ -310,7 +310,7 @@ export default function HRSystemWheel() {
       {/* ── Mobile expanded-feature panel ──────────────────────────────────── */}
       {/* Shown below the wheel; animates in when a node is tapped.            */}
       <div
-        className="lg:hidden w-full max-w-sm mt-8"
+        className="lg:hidden w-full max-w-full mt-8"
         aria-live="polite"
         aria-atomic="true"
       >

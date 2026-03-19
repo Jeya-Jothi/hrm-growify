@@ -81,14 +81,14 @@ const Hero = () => {
             ref={imgRef}
             width={900}
             height={900}
-            className="opacity-8 dark:opacity-5"
+            className="w-[120%] sm:w-125 md:w-150 xl:w-200 opacity-8 dark:opacity-5"
             style={{ willChange: "transform", transformStyle: "preserve-3d" }}
           />
         </div>
       </div>
 
       {/* Hero Content */}
-      <div className="max-w-4xl text-center flex flex-col items-center gap-6">
+      <div className="md:max-w-4xl text-center flex flex-col items-center gap-6">
         {/* Announcement Badge */}
         <div className="flex items-center gap-2 px-4 py-1 text-sm rounded-full border border-gray-200 bg-white shadow-xs dark:border-neutral-700 dark:bg-neutral-900/50 backdrop-blur">
           <LivePulseIcon />
@@ -103,7 +103,7 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="max-w-2xl text-neutral-600 dark:text-neutral-300 text-lg sm:text-xl">
+        <p className="md:max-w-2xl text-neutral-600 dark:text-neutral-300 text-lg sm:text-xl">
           Manage employees, automate payroll, track attendance, and stay
           compliant — all in one intelligent HR platform built for growing
           companies.

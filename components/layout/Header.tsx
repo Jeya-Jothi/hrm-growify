@@ -32,15 +32,12 @@ export default function Header() {
     <header className="fixed top-0 left-0 w-full z-50 flex justify-center">
       {/* Nav Container */}
       <div
-        className="mt-4 w-[95%] max-w-7xl flex items-center justify-between px-6 py-3 
+        className="mt-4 w-full md:max-w-7xl mx-4 flex items-center justify-between px-6 py-3 
       dark:bg-white/5 backdrop-blur-xl border border-gray-200/80 shadow-sm dark:shadow-none dark:border-white/10 rounded-full"
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-9 h-9 rounded-full bg-linear-to-tr from-blue-500 to-cyan-300" />
-          <span className="font-semibold text-lg">
-            Growify<span className="text-blue-500">HRM</span>
-          </span>
+          <img src="/hrm full logo.svg" alt="" className="w-24 lg:w-34" />
         </Link>
 
         {/* Desktop Navigation */}

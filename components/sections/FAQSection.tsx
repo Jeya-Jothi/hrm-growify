@@ -35,14 +35,14 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="relative scroll-mt-20 py-10 md:py-20 px-6 overflow-hidden"
+      className="relative scroll-mt-20 py-10 lg:py-20 px-6 overflow-hidden"
     >
       {/* Gradient Glow Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute w-30 h-30 bg-blue-400/30 blur-[100px] rounded-full bottom-40 left-[200px] animate-pulse" />
       </div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+      <div className="md:max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}

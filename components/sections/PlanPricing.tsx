@@ -181,7 +181,7 @@ export default function PlanPricing() {
     <section
       id="pricing"
       ref={sectionRef}
-      className="relative py-20 md:py-28 px-6 lg:px-16 overflow-hidden"
+      className="relative py-10 md:py-20 xl:py-28 px-6 lg:px-16 overflow-hidden"
     >
       {/* ── Background grid (light) ── */}
       <div
@@ -201,12 +201,10 @@ export default function PlanPricing() {
           backgroundSize: "50px 50px",
         }}
       />
-
       {/* ── Glow blobs ── */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[340px] rounded-full bg-blue-500/10 blur-[130px] -z-10" />
-      <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2  w-[400px] h-[220px] rounded-full bg-blue-400/10 blur-[100px] -z-10" />
-
-      <div className="max-w-7xl mx-auto">
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[340px] rounded-full bg-blue-500/10 blur-[130px] -z-10" />{" "}
+      <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-[220px] rounded-full bg-blue-400/10 blur-[100px] -z-10" />
+      <div className="xl:max-w-7xl mx-auto">
         {/* ════════ Header ════════ */}
         <motion.div
           variants={headerVariants}
@@ -223,7 +221,7 @@ export default function PlanPricing() {
             <br className="hidden sm:block" /> pricing.
           </h2>
 
-          <p className="mt-5 text-neutral-500 dark:text-neutral-400 text-base sm:text-lg max-w-xl mx-auto">
+          <p className="mt-5 text-neutral-500 dark:text-neutral-400 text-base sm:text-lg md:max-w-xl mx-auto">
             No hidden fees. No credit card required. Cancel anytime.
             <br className="hidden sm:block" />
             Scale as you grow.
@@ -297,7 +295,7 @@ export default function PlanPricing() {
                         transition: { duration: 0.22, ease: "easeOut" },
                       }
                 }
-                className={`group relative flex flex-col rounded-3xl border p-8 transition-all duration-300
+                className={`group relative flex flex-col rounded-3xl border p-5 md:p-8 transition-all duration-300
                   ${
                     plan.popular
                       ? "border-blue-500 bg-white dark:bg-neutral-900 z-10 md:scale-105 shadow-[0_0_50px_-5px_rgba(59,130,246,0.35)] dark:shadow-[0_0_50px_-5px_rgba(59,130,246,0.2)]"
@@ -330,7 +328,7 @@ export default function PlanPricing() {
                 )}
 
                 {/* ── Plan name + icon ── */}
-                <div className="flex items-center gap-3 mb-6">
+                <div className="flex items-center gap-3 mb-3 md:mb-6">
                   <div
                     className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${
                       plan.popular
@@ -361,7 +359,7 @@ export default function PlanPricing() {
                 </div>
 
                 {/* ── Price ── */}
-                <div className="mb-2 min-h-[72px]">
+                <div className="mb-2 md:min-h-18">
                   {plan.enterprise ? (
                     <p className="text-5xl font-extrabold text-gradient">
                       Custom

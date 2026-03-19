@@ -27,8 +27,8 @@ export default function ChaosToClarity() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="w-full py-20 px-6 lg:px-16">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full py-10 md:py-20 px-6 lg:px-16">
+      <div className="md:max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-10">
           <h2 className="text-3xl lg:text-4xl font-bold">
@@ -36,7 +36,7 @@ export default function ChaosToClarity() {
             <span className="text-blue-400">Clarity</span> in 3 Steps
           </h2>
 
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-gray-400 mt-4 md:max-w-2xl mx-auto">
             Turn messy payroll data into clear, automated workflows in just
             three simple steps.
           </p>

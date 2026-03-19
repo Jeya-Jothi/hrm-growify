@@ -125,7 +125,7 @@ function Stars() {
 function TestimonialCard({ t }: { t: Testimonial }) {
   return (
     <article
-      className="relative w-[300px] mr-5 shrink-0 flex flex-col rounded-2xl bg-white dark:bg-neutral-900/80 backdrop-blur-sm ring-1 ring-gray-200 dark:ring-neutral-800 hover:ring-blue-300 dark:hover:ring-blue-500/40 px-6 py-6 
+      className="relative w-[300px] shrink-0 flex flex-col rounded-2xl bg-white dark:bg-neutral-900/80 backdrop-blur-sm ring-1 ring-gray-200 dark:ring-neutral-800 hover:ring-blue-300 dark:hover:ring-blue-500/40 px-6 py-6 
     overflow-hidden cursor-default transition-all duration-300 group shadow-lg"
     >
       {/* Large decorative quote in corner */}
@@ -193,7 +193,7 @@ function MarqueeRow({
       }}
     >
       <div
-        className="flex w-max"
+        className="flex min-w-max gap-5"
         style={{
           animation: `${direction === "left" ? "tmLeft" : "tmRight"} ${duration} linear infinite`,
         }}
@@ -235,7 +235,7 @@ export default function Testimonials() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-10 md:py-28 overflow-hidden"
+      className="relative py-10 lg:py-15 xl:py-20 overflow-hidden"
     >
       {/* ── CSS keyframes injected inline ── */}
       <style>{`
@@ -250,7 +250,7 @@ export default function Testimonials() {
       `}</style>
 
       {/* ──────── Section header ──────── */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="md:max-w-7xl mx-auto px-6 lg:px-16">
         <motion.div
           variants={headerVariants}
           initial="hidden"
@@ -282,7 +282,7 @@ export default function Testimonials() {
         className="mt-14 space-y-4"
       >
         <MarqueeRow items={ROW_ONE} direction="left" duration="44s" />
-        {/* <MarqueeRow items={ROW_TWO} direction="right" duration="37s" /> */}
+        <MarqueeRow items={ROW_TWO} direction="right" duration="37s" />
       </motion.div>
     </section>
   );
