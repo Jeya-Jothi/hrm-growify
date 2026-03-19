@@ -16,7 +16,10 @@ export default function Showcase() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white"
         >
-          From Chaos to Clarity
+          <span className="text-3xl lg:text-4xl font-bold">
+            <span className="text-blue-400">Chaos</span> to{" "}
+            <span className="text-blue-400">Clarity</span>
+          </span>
         </motion.h2>
 
         <motion.p

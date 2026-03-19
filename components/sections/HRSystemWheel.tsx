@@ -88,7 +88,7 @@ export default function HRSystemWheel() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 px-6 flex flex-col items-center"
+      className="relative py-10 md:py-24 px-6 flex flex-col items-center"
       aria-labelledby="hr-wheel-heading"
     >
       {/* ── Section header ─────────────────────────────────────────────────── */}
@@ -98,9 +98,9 @@ export default function HRSystemWheel() {
         transition={{ duration: 0.6 }}
         className="text-center max-w-2xl mb-16 lg:mb-20"
       >
-        <p className="text-blue-400 font-semibold text-sm uppercase tracking-widest mb-3">
+        <span className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-blue-500/10 text-blue-500 border border-blue-500/20">
           Platform Overview
-        </p>
+        </span>
         <h2
           id="hr-wheel-heading"
           className="text-3xl lg:text-4xl font-bold leading-tight"
@@ -259,10 +259,10 @@ export default function HRSystemWheel() {
                       whileHover={{ backgroundColor: "rgba(59,130,246,0.07)" }}
                       transition={{ duration: 0.18 }}
                     />
-                    <h3 className="relative text-base xl:text-lg font-semibold dark:text-white mb-1.5 leading-snug">
+                    <h3 className="relative text-base xl:text-lg font-semibold dark:text-white mb-1.5 leading-snug w-[80%]">
                       {feature.title}
                     </h3>
-                    <p className="relative text-xs xl:text-sm text-gray-400 leading-relaxed mb-2.5">
+                    <p className="relative text-xs xl:text-sm text-gray-400 leading-relaxed mb-2.5 w-[80%]">
                       {feature.desc}
                     </p>
                     <Link
