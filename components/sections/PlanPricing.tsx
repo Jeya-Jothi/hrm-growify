@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import CountUp from "../ui/CountUp";
 import {
@@ -144,6 +144,38 @@ export default function PlanPricing() {
   const [billing, setBilling] = useState<BillingCycle>("monthly");
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: "-80px" });
+  const [prevPrices, setPrevPrices] = useState<Record<string, number>>({});
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+
+  useEffect(() => {
+    const updated: Record<string, number> = {};
+
+    plans.forEach((plan) => {
+      updated[plan.name] =
+        billing === "monthly" ? plan.monthlyPrice || 0 : plan.annualPrice || 0;
+    });
+
+    setPrevPrices(updated);
+
+    // after first render, disable initial logic
+    if (isFirstLoad) {
+      setIsFirstLoad(false);
+    }
+  }, [billing]);
+
+  useEffect(() => {
+    setPrevPrices((prev) => ({
+      ...prev,
+      ...Object.fromEntries(
+        plans.map((plan) => [
+          plan.name,
+          billing === "monthly"
+            ? plan.monthlyPrice || 0
+            : plan.annualPrice || 0,
+        ]),
+      ),
+    }));
+  }, [billing]);
 
   return (
     <section
@@ -345,7 +377,13 @@ export default function PlanPricing() {
                       >
                         ₹
                         <CountUp
-                          from={0}
+                          from={
+                            isFirstLoad
+                              ? plan.name === "Growth"
+                                ? 90
+                                : 0
+                              : (prevPrices[plan.name] ?? 0)
+                          }
                           to={price || 0}
                           duration={1.2}
                           startWhen={inView}
