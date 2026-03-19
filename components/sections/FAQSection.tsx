@@ -33,7 +33,10 @@ export default function FAQSection() {
     setActive(active === i ? null : i);
   };
   return (
-    <section className="relative py-10 md:py-20 px-6 overflow-hidden">
+    <section
+      id="faq"
+      className="relative scroll-mt-20 py-10 md:py-20 px-6 overflow-hidden"
+    >
       {/* Gradient Glow Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute w-30 h-30 bg-blue-400/30 blur-[100px] rounded-full bottom-40 left-[200px] animate-pulse" />

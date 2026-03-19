@@ -68,7 +68,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative flex items-center justify-center overflow-hidden px-6 py-35 mt-20">
+    <section
+      id="hero"
+      className="relative flex items-center justify-center overflow-hidden px-6 py-35 mt-20"
+    >
       {/* Background Animated Graphic */}
       <div className="absolute inset-0 flex items-center justify-center -z-10 pb-20">
         <div className="perspective:distance">

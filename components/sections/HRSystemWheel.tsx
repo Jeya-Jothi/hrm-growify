@@ -88,7 +88,8 @@ export default function HRSystemWheel() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-10 md:py-24 px-6 flex flex-col items-center"
+      id="features"
+      className="relative scroll-mt-20 py-10 md:py-24 px-6 flex flex-col items-center"
       aria-labelledby="hr-wheel-heading"
     >
       {/* ── Section header ─────────────────────────────────────────────────── */}

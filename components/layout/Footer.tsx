@@ -2,8 +2,25 @@
 
 import { motion } from "framer-motion";
 import { FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowTop(window.scrollY > 300); // show after scrolling down
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="relative mt-24 border-t border-gray-200 dark:border-white/10 overflow-hidden">
       {/* Gradient Half Circle Glow */}
@@ -108,6 +125,21 @@ export default function Footer() {
           </div>
         </div>
       </motion.div>
+      {showTop && (
+        <motion.button
+          onClick={scrollToTop}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full 
+    bg-blue-500 text-white flex items-center justify-center 
+    shadow-lg hover:bg-blue-600 transition"
+        >
+          <ArrowUp size={18} />
+        </motion.button>
+      )}
     </footer>
   );
 }
