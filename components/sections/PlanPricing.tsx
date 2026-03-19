@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import CountUp from "../ui/CountUp";
 import {
   Check,
   Sparkles,
@@ -340,9 +341,16 @@ export default function PlanPricing() {
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.22 }}
-                        className="text-5xl font-extrabold tracking-tight"
+                        className="text-5xl font-extrabold tracking-tight flex"
                       >
-                        ₹{price}
+                        ₹
+                        <CountUp
+                          from={0}
+                          to={price || 0}
+                          duration={1.2}
+                          startWhen={inView}
+                          separator=","
+                        />
                       </motion.span>
                       <span className="text-neutral-500 dark:text-neutral-400 mb-2 text-sm">
                         /user/mo

@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Compare } from "@/components/ui/compare";
 
 export default function Showcase() {
   return (
-    <section className="relative py-20 px-6 overflow-hidden">
+    <section className="relative py-5 lg:py-20 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         {/* Heading */}
         <motion.h2
@@ -51,15 +52,16 @@ export default function Showcase() {
 
             {/* Image */}
             <div className="relative rounded-xl overflow-hidden">
-              <Image
-                src="/chaos-to-clarity.webp" // place in public folder
-                alt="Chaos to Clarity"
-                width={1200}
-                height={700}
-                className="w-full h-auto object-cover"
+              <Compare
+                firstImage="/chaos.jpg"
+                secondImage="/clarity.jpg"
+                firstImageClassName="object-cover"
+                secondImageClassname="object-cover"
+                className="w-full h-[280px] sm:h-[300px] md:h-[500px] lg:h-[600px]"
+                slideMode="drag"
               />
 
-              {/* Overlay Gradient (tech feel) */}
+              {/* Keep your overlay for consistency */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
             </div>
           </div>
