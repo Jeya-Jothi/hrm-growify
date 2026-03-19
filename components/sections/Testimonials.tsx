@@ -4,6 +4,8 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Star } from "lucide-react";
 
+import Marquee from "react-fast-marquee";
+
 /* ─────────────────────────── types ─────────────────────────── */
 interface Testimonial {
   quote: string;
@@ -124,45 +126,33 @@ function Stars() {
 
 function TestimonialCard({ t }: { t: Testimonial }) {
   return (
-    <article
-      className="relative w-[300px] shrink-0 flex flex-col rounded-2xl bg-white dark:bg-neutral-900/80 backdrop-blur-sm ring-1 ring-gray-200 dark:ring-neutral-800 hover:ring-blue-300 dark:hover:ring-blue-500/40 px-6 py-6 
-    overflow-hidden cursor-default transition-all duration-300 group shadow-lg"
-    >
-      {/* Large decorative quote in corner */}
-      <span
-        className="absolute -top-1 right-3 text-8xl font-black leading-none text-blue-500/[0.07] dark:text-blue-400/[0.1] select-none pointer-events-none"
-        aria-hidden
-      >
+    <article className="relative w-[280px] sm:w-[300px] min-w-[280px] sm:min-w-[300px] shrink-0 flex flex-col rounded-2xl bg-white dark:bg-neutral-900/80 backdrop-blur-sm ring-1 ring-gray-200 dark:ring-neutral-800 hover:ring-blue-300 dark:hover:ring-blue-500/40 px-5 sm:px-6 py-5 sm:py-6 overflow-hidden transition-all duration-300 group shadow-lg">
+      <span className="absolute -top-1 right-3 text-7xl sm:text-8xl font-black text-blue-500/[0.07] dark:text-blue-400/[0.1]">
         &#8220;
       </span>
 
-      {/* Inner hover glow */}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-blue-500/0 group-hover:bg-blue-500/[0.02] dark:group-hover:bg-blue-500/[0.04] transition-colors duration-300" />
+      <div className="absolute inset-0 rounded-2xl bg-blue-500/0 group-hover:bg-blue-500/[0.03] transition" />
 
-      {/* Stars */}
       <Stars />
 
-      {/* Quote text */}
-      <p className="flex-1 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed mb-5">
+      <p className="flex-1 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed mb-4 sm:mb-5">
         &ldquo;{t.quote}&rdquo;
       </p>
 
-      {/* Divider */}
-      <div className="border-t border-gray-100 dark:border-neutral-800 mb-4" />
+      <div className="border-t border-gray-100 dark:border-neutral-800 mb-3 sm:mb-4" />
 
-      {/* Author */}
       <div className="flex items-center gap-3">
         <div
-          className="w-9 h-9 rounded-full flex items-center justify-center text-[11px] font-bold text-white shrink-0 ring-2 ring-white dark:ring-neutral-900"
+          className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-[10px] sm:text-[11px] font-bold text-white"
           style={{ backgroundColor: t.avatarBg }}
         >
           {t.initials}
         </div>
         <div>
-          <p className="text-sm font-semibold text-neutral-900 dark:text-white leading-tight">
+          <p className="text-xs sm:text-sm font-semibold text-neutral-900 dark:text-white">
             {t.name}
           </p>
-          <p className="text-xs text-neutral-500 dark:text-neutral-400">
+          <p className="text-[10px] sm:text-xs text-neutral-500 dark:text-neutral-400">
             {t.role}, {t.company}
           </p>
         </div>
@@ -174,42 +164,37 @@ function TestimonialCard({ t }: { t: Testimonial }) {
 function MarqueeRow({
   items,
   direction = "left",
-  duration = "42s",
+  speed = 40,
 }: {
   items: Testimonial[];
   direction?: "left" | "right";
-  duration?: string;
+  speed?: number;
 }) {
-  const doubled = [...items, ...items];
-
   return (
     <div
-      className="overflow-hidden py-2"
+      className="py-2 overflow-hidden"
       style={{
         maskImage:
-          "linear-gradient(to right, transparent, black 7%, black 93%, transparent)",
+          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
         WebkitMaskImage:
-          "linear-gradient(to right, transparent, black 7%, black 93%, transparent)",
+          "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
       }}
     >
-      <div
-        className="flex min-w-max gap-5"
-        style={{
-          animation: `${direction === "left" ? "tmLeft" : "tmRight"} ${duration} linear infinite`,
-        }}
-        onMouseEnter={(e) => {
-          (e.currentTarget as HTMLDivElement).style.animationPlayState =
-            "paused";
-        }}
-        onMouseLeave={(e) => {
-          (e.currentTarget as HTMLDivElement).style.animationPlayState =
-            "running";
-        }}
+      <Marquee
+        gradient={false}
+        speed={speed}
+        direction={direction}
+        pauseOnHover
+        pauseOnClick
+        autoFill
       >
-        {doubled.map((t, i) => (
-          <TestimonialCard key={`${t.name}-${i}`} t={t} />
-        ))}
-      </div>
+        {/* ✅ IMPORTANT FIX */}
+        <div className="flex gap-4 sm:gap-5 px-2">
+          {items.map((t, i) => (
+            <TestimonialCard key={`${t.name}-${i}`} t={t} />
+          ))}
+        </div>
+      </Marquee>
     </div>
   );
 }
@@ -281,8 +266,8 @@ export default function Testimonials() {
         transition={{ duration: 0.7, delay: 0.35 }}
         className="mt-14 space-y-4"
       >
-        <MarqueeRow items={ROW_ONE} direction="left" duration="44s" />
-        <MarqueeRow items={ROW_TWO} direction="right" duration="37s" />
+        <MarqueeRow items={ROW_ONE} speed={38} />
+        <MarqueeRow items={ROW_TWO} direction="right" speed={32} />
       </motion.div>
     </section>
   );
