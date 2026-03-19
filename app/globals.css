@@ -43,6 +43,28 @@ body {
   animation: glowPulse 2.5s ease-in-out infinite;
 }
 
+/* Scrollbar width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: #f3f4f6; /* light gray (Tailwind gray-100) */
+}
+
+/* Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #3b82f6; /* Tailwind blue-500 */
+  border-radius: 9999px;
+  border: 2px solid #f3f4f6; /* creates padding effect */
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2563eb; /* blue-600 */
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

@@ -181,7 +181,7 @@ export default function PlanPricing() {
     <section
       id="pricing"
       ref={sectionRef}
-      className="relative py-28 px-6 lg:px-16 overflow-hidden"
+      className="relative py-20 md:py-28 px-6 lg:px-16 overflow-hidden"
     >
       {/* ── Background grid (light) ── */}
       <div
@@ -212,7 +212,7 @@ export default function PlanPricing() {
           variants={headerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center mb-5 md:mb-16"
         >
           <span className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-blue-500/10 text-blue-500 border border-blue-500/20">
             Pricing

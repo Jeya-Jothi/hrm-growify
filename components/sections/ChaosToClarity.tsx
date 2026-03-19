@@ -66,22 +66,22 @@ export default function ChaosToClarity() {
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-0 items-center">
           {/* Animation */}
           <div className="flex justify-center">
-            <div className="w-70 h-70 rounded-3xl border border-gray-300 shadow-lg dark:border-neutral-800 dark:bg-neutral-900 flex items-center justify-center overflow-hidden">
+            <div className="w-50 h-50 md:w-70 md:h-70 rounded-3xl border border-gray-300 shadow-lg dark:border-neutral-800 dark:bg-neutral-900 flex items-center justify-center overflow-hidden">
               <img
                 key={activeStep}
                 src={steps[activeStep].animation}
-                className="w-40 h-40 object-cover"
+                className="w-20 h-20 md:w-40 md:h-40 object-cover"
               />
             </div>
           </div>
 
           {/* Text */}
-          <div>
+          <div className="flex flex-col items-center">
             <h3 className="text-2xl font-semibold mb-4">
               {steps[activeStep].title}
             </h3>
 
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed text-center">
               {steps[activeStep].description}
             </p>
           </div>

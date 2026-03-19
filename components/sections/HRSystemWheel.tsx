@@ -75,9 +75,6 @@ export default function HRSystemWheel() {
     return () => ro.disconnect();
   }, []);
 
-  /* Pixel-space offset of each outer node from container center.
-   * Relationship: pixelOffset = SVGOffset × (containerSize / SVG_SIZE)
-   * ⟹  pixelRadius = SVG_SPOKE_RADIUS × (containerSize / SVG_SIZE)              */
   const pixelRadius = containerSize * (SVG_SPOKE_RADIUS / SVG_SIZE);
 
   const pixelPositions = ANGLES.map((a) => ({
@@ -285,12 +282,12 @@ export default function HRSystemWheel() {
                       "lg:hidden rounded-full flex items-center justify-center text-center",
                       "w-22.5 h-22.5 sm:w-35 sm:h-35",
                       "-translate-x-1/2 -translate-y-1/2",
-                      "p-1.5 text-xs sm:text-sm font-medium text-white",
+                      "p-1.5 text-xs sm:text-sm font-medium dark:text-white",
                       "backdrop-blur-xl border transition-colors duration-200",
                       "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
                       isExpanded
-                        ? "border-blue-400 bg-blue-500/25 shadow-[0_0_24px_rgba(59,130,246,0.55)]"
-                        : "border-blue-500/30 bg-neutral-900/70 hover:border-blue-500/55",
+                        ? "border-blue-200 dark:border-blue-400 bg-blue-50/50 dark:bg-blue-500/25 shadow-[0_0_24px_rgba(59,130,246,0.55)]"
+                        : "border-blue-500/30 dark:bg-neutral-900/70 hover:border-blue-500/55",
                     ].join(" ")}
                     onClick={() => setExpandedIndex(isExpanded ? null : i)}
                     whileTap={{ scale: 0.9 }}
@@ -327,11 +324,14 @@ export default function HRSystemWheel() {
               transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
               style={{ overflow: "hidden" }}
             >
-              <div className="rounded-2xl border border-blue-500/40 bg-neutral-900/80 backdrop-blur-xl p-5">
-                <h3 className="text-base font-semibold text-white mb-2">
+              <div
+                className="rounded-2xl border border-blue-200 dark:border-blue-500/40 bg-blue-100/30 dark:bg-neutral-900/80 
+              backdrop-blur-xl p-5"
+              >
+                <h3 className="text-base font-semibold dark:text-white mb-2">
                   {FEATURES[expandedIndex].title}
                 </h3>
-                <p className="text-sm text-gray-400 leading-relaxed mb-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
                   {FEATURES[expandedIndex].desc}
                 </p>
                 <Link

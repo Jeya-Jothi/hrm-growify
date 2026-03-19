@@ -5,7 +5,7 @@ import { Compare } from "@/components/ui/compare";
 
 export default function Showcase() {
   return (
-    <section className="relative py-5 lg:py-20 px-6 overflow-hidden">
+    <section className="relative py-5 pb-15 lg:py-20 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         {/* Heading */}
         <motion.h2
