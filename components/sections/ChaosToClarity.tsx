@@ -36,7 +36,7 @@ export default function ChaosToClarity() {
             <span className="text-blue-400">Clarity</span> in 3 Steps
           </h2>
 
-          <p className="text-gray-400 mt-4 md:max-w-2xl mx-auto">
+          <p className="text-gray-400 text-sm lg:text-lg mt-4 md:max-w-2xl mx-auto">
             Turn messy payroll data into clear, automated workflows in just
             three simple steps.
           </p>
@@ -77,7 +77,7 @@ export default function ChaosToClarity() {
 
           {/* Text */}
           <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-semibold mb-4">
+            <h3 className="text-2xl font-semibold mb-4 text-center lg:text-left">
               {steps[activeStep].title}
             </h3>
 

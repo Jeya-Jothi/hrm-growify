@@ -338,7 +338,7 @@ export default function Metrics() {
           initial={{ opacity: 0, y: 36 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 36 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          className="text-center mb-5 md:mb-16"
         >
           <span className="inline-block mb-4 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-blue-500/10 text-blue-500 border border-blue-500/20">
             Real Impact
@@ -350,7 +350,7 @@ export default function Metrics() {
             <span className="text-blue-500">Modern Teams</span>
           </h2>
 
-          <p className="mt-5 text-neutral-500 dark:text-neutral-400 text-base sm:text-lg max-w-xl mx-auto">
+          <p className="mt-5 text-neutral-500 dark:text-neutral-400 text-sm lg:text-lg max-w-xl mx-auto">
             See how high-performing organizations use Growifyhrm to transform
             their workforce management.
           </p>

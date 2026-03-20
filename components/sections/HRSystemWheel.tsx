@@ -106,7 +106,7 @@ export default function HRSystemWheel() {
           One Central <span className="text-blue-500">HR Operating System</span>{" "}
           Powering Everything
         </h2>
-        <p className="mt-4 text-gray-400 text-lg">
+        <p className="mt-4 text-gray-400 text-sm lg:text-lg">
           Replace fragmented tools with a single intelligent platform that
           automates, connects, and scales with your workforce.
         </p>

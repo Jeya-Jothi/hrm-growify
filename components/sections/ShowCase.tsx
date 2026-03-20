@@ -26,7 +26,7 @@ export default function Showcase() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
           viewport={{ once: true }}
-          className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+          className="mt-4 text-gray-600 text-sm lg:text-lg dark:text-gray-400 max-w-2xl mx-auto"
         >
           Transform messy workflows into a streamlined, productive system with
           powerful automation and team collaboration.

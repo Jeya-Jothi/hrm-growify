@@ -30,7 +30,7 @@ export default function GetStarted() {
     <section className="relative py-15 xl:py-20 px-6 lg:px-16 overflow-hidden">
       {/* ── Ambient glow behind the card ── */}
       <div className="hidden lg:block pointer-events-none absolute inset-0 -z-10 flex items-center justify-center">
-        <div className="w-[700px] h-[420px] rounded-full bg-blue-500/10 blur-[130px]" />
+        <div className="w-[700px] h-[420px] absolute top-30 rounded-full bg-blue-500/10 blur-[130px]" />
       </div>
       <div className="hidden lg:block pointer-events-none absolute bottom-50 left-1/4 -z-10 w-[400px] h-[250px] rounded-full bg-violet-400/10 blur-[100px]" />
 

@@ -256,7 +256,7 @@ export default function Testimonials() {
             <span className="text-blue-500">That Grow</span>
           </h2>
 
-          <p className="mt-5 text-neutral-500 dark:text-neutral-400 text-base sm:text-lg max-w-xl mx-auto">
+          <p className="mt-5 text-neutral-500 dark:text-neutral-400 text-sm lg:text-lg max-w-xl mx-auto">
             From startups to enterprises — teams across every industry rely on
             Growifyhrm to manage their most valuable asset.
           </p>

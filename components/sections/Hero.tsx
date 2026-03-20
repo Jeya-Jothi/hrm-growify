@@ -70,7 +70,7 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative flex items-center justify-center overflow-hidden px-6 py-25 md:py-35 mt-20"
+      className="relative flex items-center justify-center overflow-hidden px-6 py-15 md:py-25 lg:py-35 mt-20"
     >
       {/* Background Animated Graphic */}
       <div className="absolute inset-0 flex items-center justify-center -z-10 pb-20">
@@ -90,20 +90,20 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="md:max-w-4xl text-center flex flex-col items-center gap-6">
         {/* Announcement Badge */}
-        <div className="flex items-center gap-2 px-4 py-1 text-sm rounded-full border border-gray-200 bg-white shadow-xs dark:border-neutral-700 dark:bg-neutral-900/50 backdrop-blur">
+        <div className="flex items-center gap-2 px-4 py-1 text-xs md:text-sm rounded-full border border-gray-200 bg-white shadow-xs dark:border-neutral-700 dark:bg-neutral-900/50 backdrop-blur">
           <LivePulseIcon />
 
           <p>New: AI-Powered Payroll Automation</p>
         </div>
 
         {/* Title */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gradient">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gradient">
           Simplified HR & Payroll Management <br />
           Powered by AI
         </h1>
 
         {/* Subtitle */}
-        <p className="md:max-w-2xl text-neutral-600 dark:text-neutral-300 text-lg sm:text-xl">
+        <p className="md:max-w-2xl text-neutral-600 dark:text-neutral-300 text-sm md:text-lg sm:text-xl">
           Manage employees, automate payroll, track attendance, and stay
           compliant — all in one intelligent HR platform built for growing
           companies.
@@ -131,7 +131,7 @@ const Hero = () => {
         </div>
 
         {/* Trust line */}
-        <p className="text-sm text-neutral-500 mt-2 hover:text-neutral-400 transition">
+        <p className="text-xs md:text-sm text-neutral-500 mt-2 hover:text-neutral-400 transition">
           No credit card required · Free trial · Cancel anytime
         </p>
       </div>

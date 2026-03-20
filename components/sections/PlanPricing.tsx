@@ -221,7 +221,7 @@ export default function PlanPricing() {
             <br className="hidden sm:block" /> pricing.
           </h2>
 
-          <p className="mt-5 text-neutral-500 dark:text-neutral-400 text-base sm:text-lg md:max-w-xl mx-auto">
+          <p className="mt-5 text-neutral-500 dark:text-neutral-400 text-sm lg:text-lg md:max-w-xl mx-auto">
             No hidden fees. No credit card required. Cancel anytime.
             <br className="hidden sm:block" />
             Scale as you grow.
@@ -310,7 +310,7 @@ export default function PlanPricing() {
 
                 {/* ── Most Popular badge ── */}
                 {plan.popular && (
-                  <div className="absolute -top-[22px] inset-x-0 flex justify-center">
+                  <div className="absolute -top-3.5 md:-top-5.5 inset-x-0 flex justify-center">
                     <motion.span
                       initial={{ opacity: 0, y: -8, scale: 0.88 }}
                       animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
