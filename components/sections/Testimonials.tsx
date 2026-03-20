@@ -126,7 +126,11 @@ function Stars() {
 
 function TestimonialCard({ t }: { t: Testimonial }) {
   return (
-    <article className="relative w-[280px] sm:w-[300px] min-w-[280px] sm:min-w-[300px] shrink-0 flex flex-col rounded-2xl bg-white dark:bg-neutral-900/80 backdrop-blur-sm ring-1 ring-gray-200 dark:ring-neutral-800 hover:ring-blue-300 dark:hover:ring-blue-500/40 px-5 sm:px-6 py-5 sm:py-6 overflow-hidden transition-all duration-300 group shadow-lg">
+    <article
+      className="relative w-[280px] sm:w-[300px] min-w-[280px] sm:min-w-[300px] shrink-0 flex flex-col my-3
+    rounded-2xl bg-white dark:bg-neutral-900/80 backdrop-blur-sm ring-1 ring-gray-200 dark:ring-neutral-800
+     hover:ring-blue-300 dark:hover:ring-blue-500/40 px-5 sm:px-6 py-5 sm:py-6 overflow-hidden transition-all duration-300 group shadow-lg"
+    >
       <span className="absolute -top-1 right-3 text-7xl sm:text-8xl font-black text-blue-500/[0.07] dark:text-blue-400/[0.1]">
         &#8220;
       </span>
@@ -172,7 +176,7 @@ function MarqueeRow({
 }) {
   return (
     <div
-      className="py-2 overflow-hidden"
+      className="md:py-2 mb-0 overflow-hidden"
       style={{
         maskImage:
           "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
@@ -264,7 +268,7 @@ export default function Testimonials() {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.7, delay: 0.35 }}
-        className="mt-14 space-y-4"
+        className="mt-5 md:mt-14 space-y-4"
       >
         <MarqueeRow items={ROW_ONE} speed={38} />
         <MarqueeRow items={ROW_TWO} direction="right" speed={32} />
